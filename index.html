@@ -13,6 +13,9 @@
 
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- CK Editor CDN -->
+    <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
   </head>
 
   <body>
@@ -52,15 +55,15 @@
           <div class="col-md-2">
             <div class="dropdown create">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Create content
+                Dropdown
                 <span class="caret"></span>
               </button>
-              <ul class="dropdown-menu" ">
-                <li><a href="pages.html">Add Page</a></li>
-                <li><a href="post.html">Add Post</a></li>
-                <li><a href="users.html">Add User</a></li>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a type="button" data-toggle="modal" data-target="#addPage">Add Page</a></li>
+                <li><a href="#">Add Posts</a></li>
+                <li><a href="#">Add Users</a></li>
               </ul>
-            </div><!-- /Dropdown -->
+            </div>
           </div><!-- /col-md-2 -->
         </div><!-- /row -->
       </div><!-- /container -->
@@ -174,7 +177,65 @@
       </div>
     </section>
 
+  <!-- Footer -->
+
+    <footer id="footer">
+      <p>Copyright Adminstrap, &copy; 2017</p>
+    </footer>
+
+    <!-- /Footer -->
+
+    <!-- Modals -->
+
+    <!-- Add Page -->
+
+    <div class="modal fade" id="addPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form>
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Add Page</h4>
+            </div>
+          <div class="modal-body">
+            <div class="form-gorup">
+              <label>Page Title</label>
+              <input type="text" class="form-control" placeholder="Page Title">
+            </div>
+            <div class="form-gorup">
+              <label>Page Body</label>
+              <textarea name="editor1" class="form-control" placeholder="Page Body"></textarea>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Published
+              </label>
+            </div>
+            <div class="form-group">
+              <label>Meta Tags</label>
+              <input type="text" class="form-control" placeholder="Add Some Tags...">
+            </div>
+            <div class="form-group">
+              <label>Meta Description</label>
+              <input type="text" class="form-control" placeholder="Add Meta Description...">
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- /Modal -->
+
+    <!-- CK Editor -->
+    <script>
+            CKEDITOR.replace( 'editor1' );
+    </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
